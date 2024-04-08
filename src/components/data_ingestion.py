@@ -6,6 +6,7 @@ sys.path.append(str(Path(__file__).parent.parent))
 
 from src.exception import CustomException
 from src.logger import logging
+from src.components.model_trainer import ModelTrainer,ModelTrainerConfig
 import pandas as pd
 
 from src.components.data_transformation import DataTransformationConfig,DataTransformation
@@ -18,7 +19,7 @@ from dataclasses import dataclass
 
 @dataclass # we can directly define class variable
 class DataIngestionConfig:
-    train_data_path: str=os.path.join('artifacts',"train.csv") #output path its a path
+    train_data_path: str=os.path.join('artifacts',"train.csv") #output path its a path for saving output 
     test_data_path: str =os.path.join('artifacts',"test.csv")
     raw_data_path: str=os.path.join('artifacts',"data.csv")
 
@@ -56,8 +57,10 @@ class DataIngestion:
 #     train_data,test_data=obj.initiate_data_ingestion()
 
 #     data_transformation=DataTransformation()
-#     data_transformation.initiate_data_transformation(train_data,test_data)
+#     train_arr,test_arr, *_ =data_transformation.initiate_data_transformation(train_data,test_data)
+
+#     model_trainer=ModelTrainer()
+#     print(model_trainer.initate_model_trainer(train_arr,test_arr))
 
 # run by --> python -m src.components.data_ingestion
-
 
