@@ -17,7 +17,7 @@ from dataclasses import dataclass
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_path: str=os.path.join('artifacts',"preprocessor.pkl") #output path its a path
+    preprocessor_obj_path: str=os.path.join('artifacts',"preprocessor.pkl") #output path its a path for saving output data
 
 class DataTransformation:
     def __init__(self):
